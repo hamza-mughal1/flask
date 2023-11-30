@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="/static/style.css">
+	<title>my website</title>
+</head>
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 style="text-align: center;">Create new blog!</h1>
+        <form action="/post-blog" method="post">
+          <div class="form-group">
+            <label for="title">Title:</label>
+            <input type="text" class="form-control" id="title" name="title" required>
+          </div>
+          <div class="form-group">
+            <label for="author_name">Author Name:</label>
+            <input type="text" class="form-control" id="author_name" name="author_name" required>
+          </div>
+          <div class="form-group">
+            <label for="content">Content:</label>
+            <textarea class="form-control" id="content" name="content" rows="1" required></textarea>
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center;" class = "submit-button-div">
+          <button type="submit" class="btn btn-primary" >Create Post</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 style="text-align: center;">Search the blog</h1>
+        <form action="/search_by_id" method="POST">
+              <select id="search-option" name="search_option">
+                <option value="id">Search by ID</option>
+                <option value="author_name">Search by Author Name</option>
+                <option value="date">Search by Date</option>
+                <option value="title">Search by Title</option>
+              </select>
+          <div class="form-group">
+            <input type="text" class="form-control" id="ID" name="ID" required>
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center;" class = "submit-button-div">
+          <button type="submit" class="btn btn-primary" >Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <hr>
+        <h1 style="text-align: center;">All blogs</h1>
+        <hr>
+        {% for blog in blogs %}
+          <div class="blog-post">
+            <h2 style="text-align: center;">
+      <a href="/blog/{{ blog.id }}">{{ blog.title }}</a>
+    </h2>
+              <b>ID:  {{ blog.id }}</b>
+              <br>
+              <b2>Submited by. {{ blog.author_name }}, on {{ blog.upload_date }}</b2>
+              <br>
+        </div>
+        <hr>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

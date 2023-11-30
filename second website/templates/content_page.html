@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/content_style.css">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Enjoy the blog!</h1>
+    <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h1 style="text-align: center;">Search by ID</h1>
+        <form action="/search_by_id" method="POST">
+          <div class="form-group">
+            <label for="title">ID:</label>
+            <input type="text" class="form-control" id="ID" name="ID" required>
+          </div>
+          <div style="display: flex; justify-content: center; align-items: center;" class = "submit-button-div">
+          <button type="submit" class="btn btn-primary" >Search</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  {% for blog in blogs %}
+    <div class="blog-post">
+        <div style="display: flex; justify-content: center; align-items: center;">
+        <h2>{{ blog.title }}</h2>
+        </div>
+        <p>
+            {{ blog.content }}
+        </p>
+
+        <div class="meta">
+            <p>ID: {{ blog.id }}</p>
+            <p>Uploaded by. {{ blog.author_name }}, on. {{ blog.upload_date }}</p>
+        </div>
+    </div>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,7 @@
+{
+    "prams" : {
+        "database_connection" : "mysql://root:hamza-100@localhost/website_email",
+        "gmail_username" : "hamzaxd1123@gmail.com",
+        "gmail_password" : "anqe zpxi augn ldqc"
+    }
+}

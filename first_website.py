@@ -2,10 +2,25 @@
 from sqlalchemy.exc import IntegrityError
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import json
+from flask_mail import Mail, Message
+
+with open ("config.json","r") as j:
+    prams = json.load(j)["prams"]
+
 
 # """ initializing flask app """
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = 'mysql://root:hamza-100@localhost/website_email'
+app.config.update(
+    MAIL_SERVER = "smtp.gmail.com",
+    MAIL_PORT = "465",
+    MAIL_USE_SSL = True,
+    MAIL_USERNAME = prams["gmail_username"],
+    MAIL_PASSWORD = prams["gmail_password"]
+)
+mail_obj = Mail(app)
+
+app.config["SQLALCHEMY_DATABASE_URI"] = prams["database_connection"]
 db = SQLAlchemy(app)
 
 class Email(db.Model):
@@ -29,11 +44,16 @@ def email_submit():
         entry = Email(name = name, age = age, email = mail, phone = phone, request = user_request)
         try:
             db.session.add(entry)
-            db.session.commit()    
+            db.session.commit()
+            msg = Message(f"New request for website from {name}",
+                              sender = mail,
+                              recipients = [prams["gmail_username"]],
+                              body = f"name = {name}\nage = {age}\nphone = {phone}\nemail = {mail}\nrequest = {user_request}") 
+            mail_obj.send(msg)
         except IntegrityError:
             return "invalid perameters"
         
-    return render_template("index.html")
+    return home()
 
 
 """ Home page """
