@@ -1,3 +1,6 @@
+{% if page_en == True %}
+{% set page_no = 1 %}
+{% endif %}
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +10,9 @@
 	<title>my website</title>
 </head>
 <body>
+  <div style="padding: 20px 30px;">
+  <button onclick="location.href='/'" class="btn btn-primary">Home</button>
+</div>
   <div class="container">
     <div class="row">
       <div class="col-md-8">
@@ -73,6 +79,25 @@
       </div>
     </div>
   </div>
+  <div style="display: flex; justify-content: center; align-items: center; padding: 10px;">
+
+    {% if previous_page == True %}
+    <div style = "padding: 10px;">
+    <div class = "page-mov-button" style="padding: 5px 5px;">
+  <a href="/previous-page/{{page_no}}">Previous page -> {{page_no -1}}</a>
+</div>
+</div>
+{% endif %}
+
+    {% if next_page == True %}
+<div style = "padding: 10px;">
+<div class = "page-mov-button" style="padding: 5px 5px;">
+  <a href="/next-page/{{page_no}}">Next page -> {{page_no + 1}}</a>
+</div>
+</div>
+{% endif %}
+
+</div>
 </body>
 
 </html>
