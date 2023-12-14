@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Login</title>
+
+    <style>
+        /* Style the popup modal */
+        .popup-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            background-color: white;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            display: none; /* Initially hidden */
+        }
+
+        /* Style the popup content */
+        .popup-content {
+            text-align: center;
+        }
+
+        /* Style the close button */
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="openBtn">Open Login</button>
+
+    <div id="popupModal" class="popup-modal">
+        <div class="popup-content">
+            <h2>Login</h2>
+
+            <form action="#">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <button class="close-btn" onclick="closePopup()">Close</button>
+        </div>
+    </div>
+
+    <script>
+        // Get the popup modal
+        const popupModal = document.getElementById('popupModal');
+
+        // Get the open and close buttons
+        const openBtn = document.getElementById('openBtn');
+        const closeBtn = document.getElementsByClassName('close-btn')[0];
+
+        // Function to open the popup modal
+        function openPopup() {
+            popupModal.style.display = 'block';
+        }
+
+        // Function to close the popup modal
+        function closePopup() {
+            popupModal.style.display = 'none';
+        }
+
+        // Add event listeners to the open and close buttons
+        openBtn.addEventListener('click', openPopup);
+        closeBtn.addEventListener('click', closePopup);
+    </script>
+</body>
+</html>
