@@ -7,14 +7,21 @@
     <title>Blog</title>
 </head>
 <body>
+    <div style="padding: 20px 30px;">
+  <button onclick="location.href='/'" class="btn btn-primary">Home</button>
+</div>
     <h1>Enjoy the blog!</h1>
     <div class="container">
     <div class="row">
       <div class="col-md-8">
-        <h1 style="text-align: center;">Search by ID</h1>
         <form action="/search_by_id" method="POST">
+              <select id="search-option" name="search_option">
+                <option value="id">Search by ID</option>
+                <option value="author_name">Search by Author Name</option>
+                <option value="date">Search by Date</option>
+                <option value="title">Search by Title</option>
+              </select>
           <div class="form-group">
-            <label for="title">ID:</label>
             <input type="text" class="form-control" id="ID" name="ID" required>
           </div>
           <div style="display: flex; justify-content: center; align-items: center;" class = "submit-button-div">
