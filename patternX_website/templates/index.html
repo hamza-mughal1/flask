@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PATTERN-X</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBackgroundColor);
+
+function drawBackgroundColor() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('number', 'Iteration');
+      data.addColumn('number', 'Prediction');
+
+      data.addRows( {{ graph_data }});
+
+      var options = {
+        hAxis: {
+          title: 'Iterations'
+        },
+        vAxis: {
+          title: 'Predictions'
+        },
+        backgroundColor: '#e3e3e3'
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+    
+  </head>
+  <body>
+    <header class = "header-of-the-website">
+      <h1 class = "title">PATTERN-X <a class = "github-link" href="https://github.com/hamza-mughal1" target="_blank">Github</a> <span style="color: #ffffff">|</span> <a class = "instagram-link" href="https://www.instagram.com/_hamza__mughal_/" target="_blank">Instagram</a> </h1>
+    <a href="/" class="button-reset">reset</a>
+    </header>
+
+    <br> 
+    <p style = "padding: 0px 150px; font-family: 'Gabriola'; font-size: 35px; font-weight: bold;">
+  "Prepare to be amazed by the hidden patterns within your own mind."
+</p>
+
+    <p class = "not-yet"><span style="color: #007bff;">Here's a challenge: </span><br><span style="padding:50px;">Can you outsmart a machine that's learning to read your every move? Step inside this virtual arena where human intuition clashes with artificial intelligence.</span></p>
+    <div>
+    <div class = "centered-div" id="chart_div" ></div>
+    <a href="/left" class="button-left">left</a>
+    <a href="/right" class="button-right">right</a>
+    
+    <div class = "p-tag-div">
+    <p>Correct: <span class="data-value">{{correct}}</span></p>
+    <p>Wrong: <span class="data-value">{{wrong}}</span></p>
+    <p>Total: <span class="data-value">{{total}}</span></p>
+    <p>Percentage: <span class="data-value">{{percentage}}</span></p>
+    </div>
+  </div>
+    
+    <br>
+  <h1 style="padding-top: 500px">The Rules Are Simple:</h1>
+
+  <ol>
+    <div style="font-size: 20px;">
+<li>Gaze upon two unassuming buttons, labeled "Left" and "Right". Summon your inner randomness and choose one with unwavering conviction.</li>
+<li>Witness as the machine attempts to predict your decision before you even make it.</li>
+<li>Marvel at the graph that reveals whether your mind has been read or if you've successfully outwitted the algorithm.</li>
+<li>Feel the thrill of victory or the sting of defeat as the score reveals your impact on the machine's learning journey.</li>
+<li>Reset and repeat, embarking on a quest to discover just how unpredictable your mind can truly be.</li>
+<div>
+</ol>
+
+  <br>
+  <div style="padding: 0px 10px;">
+  <h1>But there's more to this game than meets the eye:</h1>
+
+  <ul>
+    <div style="font-size: 20px;">
+<li>Uncover the hidden depths of your subconscious: Explore how even seemingly random choices reveal subtle patterns that reflect the inner workings of your mind.</li>
+<li>Witness the power of machine learning: Experience firsthand how algorithms can decipher these patterns and make predictions about your behavior.</li>
+<li>Challenge yourself to think differently: Engage in a playful battle of wits that encourages you to break free from predictable patterns and embrace the unexpected.</li>
+<li>Celebrate the complexity and beauty of the human brain: Appreciate the intricate workings of this remarkable organ, capable of generating both conscious decisions and subconscious patterns.</li>
+<div>
+</ul>
+ <div>
+
+    <footer>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <h2 style="text-align: center;">Click a button and let the games begin!</h2></footer>
+    
+
+  </body>
+</html>

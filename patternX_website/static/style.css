@@ -1,0 +1,184 @@
+
+body { 
+  margin: 0;
+  padding: 0px;
+  background-color: #e3e3e3
+   }
+
+.centered-div {
+  position: absolute;
+  align-content: center;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px; 
+  height: 300px;
+}
+
+a.button-left {
+  position: absolute;
+  top: 90%;
+  left: 45%;
+  transform: translate(-50%, -50%);
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove default border */
+  color: white; /* White text */
+  padding: 10px 32px; /* Padding for visual space */
+  text-align: center; /* Center text within button */
+  text-decoration: none; /* Remove underline for link appearance */
+  display: inline-block; /* Display as a block-level element */
+  font-size: 16px; /* Set font size */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Hand cursor on hover */
+  margin: 5px; /* Add some spacing between buttons */
+}
+
+a.button-left:hover {
+  background-color: #3e8e41; /* Slightly darker background on hover */
+}
+
+/* Accessibility enhancements: */
+a.button-left:focus {
+  outline: 3px solid #000; /* Visible focus outline */
+}
+
+a.button-left[disabled] {
+  opacity: 0.5; /* Dim disabled buttons */
+  cursor: default; /* Default cursor for disabled buttons */
+}
+
+a.button-right {
+  position: absolute;
+  top: 90%;
+  left: 55%;
+  transform: translate(-50%, -50%);
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove default border */
+  color: white; /* White text */
+  padding: 10px 32px; /* Padding for visual space */
+  text-align: center; /* Center text within button */
+  text-decoration: none; /* Remove underline for link appearance */
+  display: inline-block; /* Display as a block-level element */
+  font-size: 16px; /* Set font size */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Hand cursor on hover */
+  margin: 5px; /* Add some spacing between buttons */
+}
+
+a.button-right:hover {
+  background-color: #3e8e41; /* Slightly darker background on hover */
+}
+
+/* Accessibility enhancements: */
+a.button-right:focus {
+  outline: 3px solid #000; /* Visible focus outline */
+}
+
+a.button-right[disabled] {
+  opacity: 0.5; /* Dim disabled buttons */
+  cursor: default; /* Default cursor for disabled buttons */
+}
+
+
+a.button-reset {
+  position: absolute;
+  top: 7%;
+  left: 93%;
+  transform: translate(-50%, -50%);
+  background-color: #4CAF50; /* Green background */
+  border: none; /* Remove default border */
+  color: white; /* White text */
+  padding: 10px 32px; /* Padding for visual space */
+  text-align: center; /* Center text within button */
+  text-decoration: none; /* Remove underline for link appearance */
+  display: inline-block; /* Display as a block-level element */
+  font-size: 16px; /* Set font size */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Hand cursor on hover */
+  margin: 5px; /* Add some spacing between buttons */
+}
+
+a.button-reset:hover {
+  background-color: #3e8e41; /* Slightly darker background on hover */
+}
+
+/* Accessibility enhancements: */
+a.button-reset:focus {
+  outline: 3px solid #000; /* Visible focus outline */
+}
+
+a.button-reset[disabled] {
+  opacity: 0.5; /* Dim disabled buttons */
+  cursor: default; /* Default cursor for disabled buttons */
+}
+
+p {
+  font-family: sans-serif; /* Use a clean, readable font */
+  font-size: 16px; /* Set a comfortable base font size */
+  color: #333; /* Dark gray text color for contrast */
+  margin-bottom: 15px; /* Add spacing between paragraphs */
+  margin-left: 50px;
+  float: left;
+}
+
+/* Highlight key data: */
+.data-value {
+  font-weight: bold; /* Bold text for emphasis */
+  color: #007bff; /* Blue color to make values stand out */
+}
+
+
+div.p-tag-div {
+  margin-left: 320px;
+  margin-top: 150px;
+
+}
+
+
+
+/* Font, Size, Color */
+.title {
+  font-family: 'Copperplate Gothic Bold'; /* Example font */
+  font-size: 40px; /* Adjust as needed */
+  color: #333; /* Example color */
+}
+
+/* Text Formatting */
+.title {
+  font-weight: bold;
+  letter-spacing: 5px; /* Adjust as needed */
+}
+
+/* Positioning and Spacing */
+.title {
+  text-align: left; /* Example alignment */
+  padding: 20px 20px; /* Adjust as needed */
+}
+
+/* Additional Effects */
+.title {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Optional */
+}
+
+
+.header-of-the-website {
+  background-color: #cfcccc;
+  border-radius: 5px; /* Rounded corners */
+}
+
+a.github-link {
+  text-decoration: none;
+  font-family: 'Arial'; /* Use a clean, readable font */
+  font-size: 13px; /* Set a comfortable base font size */
+  color: #ffffff; /* Dark gray text color for contrast */
+  margin-bottom: 15px; /* Add spacing between paragraphs */
+  margin-left: 200px;
+}
+
+a.instagram-link {
+  text-decoration: none;
+  font-family: 'Arial'; /* Use a clean, readable font */
+  font-size: 13px; /* Set a comfortable base font size */
+  color: #ffffff; /* Dark gray text color for contrast */
+  margin-bottom: 15px; /* Add spacing between paragraphs */
+}

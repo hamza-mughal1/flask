@@ -13,8 +13,7 @@ app.config["SQLALCHEMY_DATABASE_URI"] = "mysql://root:hamza-100@localhost/blog_d
 
 
 Base = declarative_base()
-limit = 5
-page_no = 1
+limit = 2
 previous_page = False
 next_page_condition = True
 
